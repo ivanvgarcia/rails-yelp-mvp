@@ -1,6 +1,6 @@
-<h1><%= @restaurant.name %></h1>
 
 <div class="container">
+<h1><%= @restaurant.name %></h1>
   <div class="btn-group" role="group" aria-label="Basic example">
     <%= link_to 'home', restaurants_path, class: "btn btn-primary" %> <%=
     link_to 'edit', edit_restaurant_path(@restaurant), class: "btn btn-success"
@@ -17,8 +17,10 @@
   <%= link_to 'Add review', new_restaurant_review_path(@restaurant) %>
   <div class="row">
     <% @restaurant.reviews.each do |review| %>
+      <div class="col-12">
         <%= review.content %>
         <%= review.rating %>
+      </div>
     <% end %>
   </div>
 </div>
